@@ -9,6 +9,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
+import { ModeToggle } from "@/components/mode-toggle"
 
 export function NavSecondary({
   items,
@@ -35,6 +36,9 @@ export function NavSecondary({
             </SidebarMenuItem>
           ))}
         </SidebarMenu>
+        <div className="flex justify-start mt-4">
+          <ModeToggle />
+        </div>
       </SidebarGroupContent>
     </SidebarGroup>
   )
