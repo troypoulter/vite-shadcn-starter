@@ -11,7 +11,7 @@ export function ModeToggle() {
       <Button
         variant="ghost"
         size="icon"
-        className={`h-8 w-8 ${theme === "light" ? "bg-primary/10 rounded-xl" : ""}`}
+        className={`h-8 w-8 rounded-xl ${theme === "light" ? "bg-primary/10" : ""}`}
         onClick={() => setTheme("light")}
         title="Light mode"
       >
@@ -21,7 +21,7 @@ export function ModeToggle() {
       <Button
         variant="ghost"
         size="icon"
-        className={`h-8 w-8 ${theme === "system" ? "bg-primary/10 rounded-xl" : ""}`}
+        className={`h-8 w-8 rounded-xl ${theme === "system" ? "bg-primary/10" : ""}`}
         onClick={() => setTheme("system")}
         title="System mode"
       >
@@ -31,7 +31,7 @@ export function ModeToggle() {
       <Button
         variant="ghost"
         size="icon"
-        className={`h-8 w-8 ${theme === "dark" ? "bg-primary/10 rounded-xl" : ""}`}
+        className={`h-8 w-8 rounded-xl ${theme === "dark" ? "bg-primary/10" : ""}`}
         onClick={() => setTheme("dark")}
         title="Dark mode"
       >
