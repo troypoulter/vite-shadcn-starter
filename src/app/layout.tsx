@@ -1,23 +1,22 @@
-import { Outlet, Link } from 'react-router'
+import { AppSidebar } from '@/components/app-sidebar'
+import { SidebarProvider, SidebarInset, SidebarTrigger } from '@/components/ui/sidebar'
+import { Link, Outlet } from 'react-router'
 
 export default function RootLayout() {
   return (
-    <div className="min-h-screen bg-background">
-      <div className="container mx-auto py-4">
-        <header className="mb-8">
-          <nav className="flex items-center space-x-4">
-            <Link to="/" className="text-lg font-medium hover:underline">Home</Link>
-            <Link to="/scorecard" className="text-lg font-medium hover:underline">Scorecard</Link>
-            <Link to="/repos" className="text-lg font-medium hover:underline">Repos</Link>
-          </nav>
+    <SidebarProvider>
+      <AppSidebar />
+      <SidebarInset>
+        <header className="flex h-16 shrink-0 items-center px-4 md:hidden">
+          <Link to="/">Logo</Link>
+          <div className="ml-auto">
+            <SidebarTrigger />
+          </div>
         </header>
-        <main>
+        <div className="flex flex-1 flex-col gap-4 p-4">
           <Outlet />
-        </main>
-        <footer className="mt-8 text-center text-sm text-muted-foreground">
-          © {new Date().getFullYear()} Vite + React + Shadcn
-        </footer>
-      </div>
-    </div>
+        </div>
+      </SidebarInset>
+    </SidebarProvider>
   )
 } 
